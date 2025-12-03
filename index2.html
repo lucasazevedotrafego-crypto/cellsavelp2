@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cell Save - Assistência Especializada no reparo de Smartphones</title>
+    <meta name="description" content="Assistência técnica especializada em iPhone e Android em Poços de Caldas. Orçamento gratuito, atendimento humanizado, tudo com qualidade e rapidez.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Cell Save - Assistência Especializada no reparo de Smartphones">
+    <meta property="og:description" content="Assistência técnica especializada em iPhone e Android em Poços de Caldas. Orçamento gratuito, atendimento humanizado, tudo com qualidade e rapidez.">
+    <meta property="og:image" content="{{OG_IMAGE_URL}}">
+    <meta property="og:type" content="website">
+    
+    <!-- JSON-LD LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Cell Save",
+      "image": "{{LOGO_URL}}",
+      "@id": "{{WEBSITE_URL}}",
+      "url": "{{WEBSITE_URL}}",
+      "telephone": "+55 35 3114-0511",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Pernambuco, 981",
+        "addressLocality": "Centro",
+        "addressRegion": "Poços de Caldas",
+        "postalCode": "",
+        "addressCountry": "MG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "{{LATITUDE}}",
+        "longitude": "{{LONGITUDE}}"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:30"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "13:00"
+      }
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo:wght@400;700&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg: #000000;
+            --accent: #B8D433;
+            --text: #FFFFFF;
+            --muted: #A9A9A9;
+            --section-height: 100vh;
+        }
+        
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', 'Open Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', 'Exo', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            letter-spacing: -0.3px;
+        }
+        
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            letter-spacing: 0.2px;
+        }
+        
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--text);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Skip Link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 8px;
+            z-index: 100;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent);
+            color: var(--bg);
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--text);
+            color: var(--bg);
+            transform: translateY(-2px);
+        }
+        
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 0;
+            position: relative;
+            min-height: var(--section-height);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .section-content {
+            width: 100%;
+            padding: 60px 0;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: var(--section-height);
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://z-cdn-media.chatglm.cn/files/89f32cdd-3af5-4a94-9294-b89ac585428f_Foto%20loja.jpg?auth_key=1792243158-386e9721bc3645b59261fb6bce4fb0c2-0-da4ea4115336816438e9ea372aa78d18');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: brightness(0.4);
+            z-index: -1;
+        }
+        
+        /* Logo no topo da hero */
+        .hero-logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: auto;
+            z-index: 2;
+        }
+        
+        .hero-logo img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Orbitron', 'Exo', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        
+        .hero .subheading {
+            color: var(--text);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.5;
+        }
+        
+        .hero .description {
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+        
+        /* Location Section */
+        .location-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .location-info {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .location-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 450px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .copyright {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 769px) {
+            .location-content {
+                flex-direction: row;
+            }
+            
+            .location-info {
+                flex: 1;
+            }
+            
+            .map-container {
+                flex: 2;
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding-top: 80px; /* Espaçamento superior para dispositivos móveis */
+            }
+            
+            .hero-logo {
+                width: 100px; /* Logo um pouco menor em dispositivos móveis */
+            }
+            
+            .hero h1 {
+                font-size: 2rem; /* Tamanho de fonte menor para dispositivos móveis */
+            }
+            
+            .hero .description {
+                font-size: 1rem; /* Textos menores em dispositivos móveis */
+            }
+            
+            .hero .subheading {
+                font-size: 1.1rem; /* Tamanho ajustado para dispositivos móveis */
+                font-weight: 400; /* Mantendo o peso normal para melhor legibilidade */
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/553531140511" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173-.199-.347-.223-.644-.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h+.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+    
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Logo no topo da hero -->
+            <div class="hero-logo">
+                <img src="./logo.png" alt="Cell Save Logo">
+            </div>
+            
+            <div class="hero-content">
+                <h1>Seja bem-vindo a Cell Save</h1>
+                <p class="description">Fale conosco através do Whatsapp, estamos prontos para te ajudar!</p>
+                <p class="subheading">Diagnóstico rápido e preciso, equipe especializada, + de 10 anos de experiência, atendimento confiável e garantia</p>
+                <a href="https://wa.me/553531140511" class="btn" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173-.199-.347-.223-.644-.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h+.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    Fale Conosco no WhatsApp
+                </a>
+            </div>
+        </section>
+        
+        <!-- Location Section -->
+        <section id="location" class="location">
+            <div class="section-content">
+                <div class="container">
+                    <h2>Faça-nos uma visita!</h2>
+                    <p>Estamos localizados no coração de Poços de Caldas, prontos para te atender com rapidez e profissionalismo.</p>
+                    
+                    <div class="location-content">
+                        <div class="location-info">
+                            <p><strong>Endereço:</strong> Rua Pernambuco, 981 – Centro, Poços de Caldas – MG</p>
+                            <p><strong>Telefone:</strong> (35) 3114-0511</p>
+                            <p><strong>Horário de funcionamento:</strong> Segunda a Sexta, das 9h às 18:30h | Sábados, das 9h às 13h</p>
+                            <div style="margin-top: 2rem;">
+                                <a href="https://wa.me/553531140511" class="btn" target="_blank" rel="noopener noreferrer">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767-.966-.94 1.164-.173-.199-.347-.223-.644-.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.174-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h+.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                    </svg>
+                                    Falar com a Cell Save no WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.843026939412!2d-46.56439148509238!3d-21.787392985614735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b8df1a2b5b3f%3A0x7d5a1c5c5c5c5c5!2sRua%20Pernambuco%2C%20981%20-%20Centro%2C%20Po%C3%A7os%20de%20Caldas%20-%20MG!5e0!3m2!1spt-BR!2sbr!4v1648324567890!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Mapa da localização da Cell Save"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2025 Cell Save – Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // WhatsApp click handler
+        document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Allow default behavior but could add tracking here if needed
+                console.log('WhatsApp link clicked');
+            });
+        });
+    </script>
+</body>
+</html>
